@@ -4,11 +4,11 @@ const app = express();
 require("dotenv").config();
 require("./database/database");
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "API is live",
-  });
-});
+app.use(express.json());
+
+const blogRoute = require("./routes/blogRoute");
+
+app.use("/api", blogRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

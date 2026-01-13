@@ -19,3 +19,5 @@ db.blog = require("../models/blogModel")(sequelize, DataTypes);
 sequelize.sync({ alter: false }).then(() => {
   console.log("Migrated successfully");
 });
+
+module.exports = db;
