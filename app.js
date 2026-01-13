@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 require("dotenv").config();
+require("./database/database");
 
 app.get("/", (req, res) => {
   res.status(200).json({
